@@ -13,8 +13,8 @@ Third THREE.js lesson in Computer Graphics II course at MENDELU.
 
 ## Links
 
-https://ar-js-org.github.io/AR.js-Docs/marker-based/
-
 https://stemkoski.github.io/AR-Examples/
 
 https://github.com/stemkoski/AR-Examples/blob/master/hello-cube.html
+
+https://ar-js-org.github.io/AR.js-Docs/marker-based/
