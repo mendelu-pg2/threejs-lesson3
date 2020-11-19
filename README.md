@@ -19,7 +19,7 @@ https://github.com/stemkoski/AR-Examples/blob/master/hello-cube.html
 
 https://ar-js-org.github.io/AR.js-Docs/marker-based/
 
-# Markers
+## Markers
 
 For print: \
 [pdf](markers/print.pdf)\
