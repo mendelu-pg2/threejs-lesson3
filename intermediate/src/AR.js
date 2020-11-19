@@ -17,7 +17,7 @@ export class AR {
         });
 
         this.arToolkitSource.init(() => {
-            this.onResize();
+            setTimeout(() => this.onResize(), 1000);
         });
 
         window.addEventListener('resize', () => {
@@ -42,7 +42,7 @@ export class AR {
             type: 'pattern', patternUrl: THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
         });
 
-        this.cube1 = new Cube(this.markerRoot1);
+        this.cube1 = new Cube(this.markerRoot1, 'yellow');
     }
 
     update() {

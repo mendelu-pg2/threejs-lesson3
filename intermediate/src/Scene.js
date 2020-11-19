@@ -12,10 +12,6 @@ export default class Scene {
         this.renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( this.renderer.domElement );
 
-        this.camera.position.x = 1;
-        this.camera.position.y = 2;
-        this.camera.position.z = 5;
-
         this.collisions = new Collisions(this.scene);
         this.ar = new AR(this.scene, this.camera, this.renderer);
     }

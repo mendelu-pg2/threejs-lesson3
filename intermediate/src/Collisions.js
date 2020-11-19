@@ -17,10 +17,10 @@ export default class Collisions {
 
     initObjects() {
         this.cube1 = new Cube(this.scene, 'green');
-        this.cube1.object.position.set(3, 3, 0);
+        this.cube1.object.position.set(1, 1, -6);
 
         this.cube2 = new Cube(this.scene, 'red')
-        this.cube2.object.position.set(0, 0, 0);
+        this.cube2.object.position.set(-1, -1, -6);
     }
 
     detectCollision() {
@@ -43,10 +43,14 @@ export default class Collisions {
     }
 
     demoAnimation() {
-        let position = {y: this.cube1.object.position.y};
+        let position = {
+            x: this.cube1.object.position.x, 
+            y: this.cube1.object.position.y
+        };
         const tween = new TWEEN.Tween(position)
-            .to({y: 0.5}, 2000)
+            .to({x: -1, y: 0}, 2000)
             .onUpdate(() => {
+                this.cube1.object.position.x = position.x;
                 this.cube1.object.position.y = position.y;
                 this.detectCollision();
             })
