@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import * as TWEEN from "@tweenjs/tween.js";
+import Cube from "./Cube";
 
 export default class Collisions {
     constructor(scene) {
@@ -15,28 +16,20 @@ export default class Collisions {
     }
 
     initObjects() {
-        const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        this.basicMaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        this.cube1 = new THREE.Mesh( geometry, this.basicMaterial );
-        this.scene.add( this.cube1 );
+        this.cube1 = new Cube(this.scene, 'green');
+        this.cube1.object.position.set(3, 3, 0);
 
-        this.cube1.position.set(0, 3, 0);
-
-        const geometry2 = new THREE.BoxGeometry( 1, 1, 1 );
-        this.basicMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-        this.cube2 = new THREE.Mesh( geometry2, this.basicMaterial );
-        this.scene.add( this.cube2 );
-
-        this.cube2.position.set(0, 0, 0);
+        this.cube2 = new Cube(this.scene, 'red')
+        this.cube2.object.position.set(0, 0, 0);
     }
 
     detectCollision() {
-        const positionCopy = this.cube1.position.clone();
-        positionCopy.y -= this.cube1.scale.y / 2;
+        const positionCopy = this.cube1.object.position.clone();
+        positionCopy.y -= this.cube1.object.scale.y / 2;
         const direction = new THREE.Vector3(0, -1, 0);
 
         this.rayCaster.set(positionCopy, direction);
-        const collisions = this.rayCaster.intersectObject(this.cube2);
+        const collisions = this.rayCaster.intersectObject(this.cube2.object);
 
         if (collisions.length > 0) {
             const firstCollision = collisions[0];
@@ -50,11 +43,11 @@ export default class Collisions {
     }
 
     demoAnimation() {
-        let position = {y: this.cube1.position.y};
+        let position = {y: this.cube1.object.position.y};
         const tween = new TWEEN.Tween(position)
             .to({y: 0.5}, 2000)
             .onUpdate(() => {
-                this.cube1.position.y = position.y;
+                this.cube1.object.position.y = position.y;
                 this.detectCollision();
             })
             .start();

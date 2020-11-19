@@ -42,8 +42,7 @@ export class AR {
             type: 'pattern', patternUrl: THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
         });
 
-        this.cube1 = new Cube();
-        this.markerRoot1.add( this.cube1.object );
+        this.cube1 = new Cube(this.markerRoot1);
     }
 
     update() {

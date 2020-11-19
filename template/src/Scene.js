@@ -15,8 +15,7 @@ export default class Scene {
         this.camera.position.y = 2;
         this.camera.position.z = 5;
 
-        this.cube = new Cube();
-        this.scene.add(this.cube.object);
+        this.cube = new Cube(this.scene, 'red');
     }
 
     animate(time) {
