@@ -18,3 +18,12 @@ https://stemkoski.github.io/AR-Examples/
 https://github.com/stemkoski/AR-Examples/blob/master/hello-cube.html
 
 https://ar-js-org.github.io/AR.js-Docs/marker-based/
+
+## Markers
+
+For print: \
+[pdf](markers/print.pdf)\
+\
+For displaying on a phone:\
+[hiro](markers/hiro.png)\
+[kanji](markers/kanji.png)
