@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    z-index: 2 !important;
+    opacity: 0.4;
+}
+
+button {
+    background: lightgray;
+    padding: 2rem 3rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#jump {
+    background: green;
+    color: white;
+    position: absolute;
+    left: 75%;
+    top: 45%;
+}
+
+#jump:hover {
+    background: forestgreen;
+}
